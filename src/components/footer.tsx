@@ -110,6 +110,14 @@ export default function Footer() {
                   FAQ
                 </button>
               </li>
+              <li>
+                <Link
+                  href="/support"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Support
+                </Link>
+              </li>
             </ul>
           </div>
 
