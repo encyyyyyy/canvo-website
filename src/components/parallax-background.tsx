@@ -1,12 +1,14 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useTheme } from "next-themes"
 
 export default function ParallaxBackground() {
   const backgroundRef = useRef<HTMLDivElement>(null)
   const layer1Ref = useRef<HTMLDivElement>(null)
   const layer2Ref = useRef<HTMLDivElement>(null)
   const layer3Ref = useRef<HTMLDivElement>(null)
+  const { theme } = useTheme()
   const [particles, setParticles] = useState<Array<{
     width: number;
     height: number;
@@ -18,6 +20,8 @@ export default function ParallaxBackground() {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (theme !== 'dark') return;
+      
       const scrollY = window.scrollY
 
       if (backgroundRef.current) {
@@ -33,20 +37,28 @@ export default function ParallaxBackground() {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [theme])
 
   useEffect(() => {
-    // Generate particles only on the client side
-    const newParticles = Array.from({ length: 10 }).map(() => ({
-      width: 5 + Math.random() * 10,
-      height: 5 + Math.random() * 10,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      duration: `${10 + Math.random() * 10}s`,
-      delay: `${Math.random() * 5}s`
-    }));
-    setParticles(newParticles);
-  }, []);
+    // Generate particles only on the client side and in dark mode
+    if (theme === 'dark') {
+      const newParticles = Array.from({ length: 10 }).map(() => ({
+        width: 5 + Math.random() * 10,
+        height: 5 + Math.random() * 10,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        duration: `${10 + Math.random() * 10}s`,
+        delay: `${Math.random() * 5}s`
+      }));
+      setParticles(newParticles);
+    } else {
+      setParticles([]);
+    }
+  }, [theme]);
+
+  if (theme !== 'dark') {
+    return null;
+  }
 
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
@@ -84,7 +96,7 @@ export default function ParallaxBackground() {
         }}
       />
 
-      {/* Floating particles with reduced opacity */}
+      {/* Floating particles */}
       <div className="absolute inset-0">
         {particles.map((particle, i) => (
           <div

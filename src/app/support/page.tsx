@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Mail, MessageCircle, FileQuestion, ArrowLeft } from "lucide-react"
+import { Mail, MessageCircle, FileQuestion, ArrowLeft, Shield } from "lucide-react"
 
 export default function SupportPage() {
   return (
@@ -58,21 +58,21 @@ export default function SupportPage() {
             </Button>
           </div>
 
-          {/* Community Support */}
+          {/* Privacy Policy */}
           <div className="bg-background/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 space-y-4">
             <div className="h-12 w-12 rounded-full bg-purple-500/10 flex items-center justify-center">
-              <MessageCircle className="h-6 w-6 text-purple-500" />
+              <Shield className="h-6 w-6 text-purple-500" />
             </div>
-            <h2 className="text-2xl font-semibold">Community</h2>
+            <h2 className="text-2xl font-semibold">Privacy Policy</h2>
             <p className="text-muted-foreground">
-              Join our community to connect with other users and share tips.
+              Learn about how we protect your privacy and handle your data.
             </p>
             <Button 
               asChild
               className="w-full bg-primary/90 hover:bg-primary shadow-[0_4px_14px_0_rgba(139,92,246,0.4)] hover:shadow-[0_6px_20px_0_rgba(139,92,246,0.6)] transition-all duration-300"
             >
-              <Link href="https://github.com/nicholasconoplia/student-todo-list/" target="_blank">
-                Join Community
+              <Link href="/privacy">
+                View Privacy Policy
               </Link>
             </Button>
           </div>

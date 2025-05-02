@@ -1,10 +1,8 @@
 import Header from "@/components/header"
 import Hero from "@/components/hero"
 import Features from "@/components/features"
-import DemoVideo from "@/components/demo-video"
 import WhyChooseUs from "@/components/why-choose-us"
 import Download from "@/components/download"
-import SecurityNotice from "@/components/security-notice"
 import Faq from "@/components/faq"
 import Footer from "@/components/footer"
 import ParallaxBackground from "@/components/parallax-background"
@@ -18,10 +16,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
-      <DemoVideo />
       <WhyChooseUs />
       <Download />
-      <SecurityNotice />
       <Faq />
       <Footer />
     </main>

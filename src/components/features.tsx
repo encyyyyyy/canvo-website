@@ -1,96 +1,66 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import {
-  Calendar,
-  CheckSquare,
-  Filter,
-  Layers,
-  List,
-  Moon,
-  MoveHorizontal,
-  PanelRight,
-  PieChart,
-  Plus,
-  School,
-  Settings,
-  Shuffle,
-} from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import {
+  Calendar,
+  Settings,
+  Shuffle,
+  FileSpreadsheet,
+  ListTodo,
+  Palette,
+  Bell,
+  Clock,
+} from "lucide-react"
 
 const features = [
   {
-    icon: <School className="h-12 w-12 text-primary" />,
+    icon: <ListTodo className="h-12 w-12 text-primary" />,
+    title: "Smart Task Management",
+    description: "Organize tasks by course, priority level, and due date.",
+  },
+  {
+    icon: <FileSpreadsheet className="h-12 w-12 text-primary" />,
     title: "Canvas Integration",
-    description: "View assignments, quizzes, and due dates directly from your Canvas account.",
+    description: "Import assignments and deadlines directly from Canvas LMS.",
   },
   {
-    icon: <Filter className="h-12 w-12 text-primary" />,
-    title: "Smart Filtering",
-    description: "Sort by class, due date, or view past due assignments you might have missed.",
+    icon: <Calendar className="h-12 w-12 text-primary" />,
+    title: "Calendar View",
+    description: "Visualize your tasks and deadlines in a clean calendar interface.",
   },
   {
-    icon: <Plus className="h-12 w-12 text-primary" />,
-    title: "Custom Tasks",
-    description: "Add your own tasks alongside Canvas assignments with custom headers.",
+    icon: <Bell className="h-12 w-12 text-primary" />,
+    title: "Due Date Reminders",
+    description: "Get notified about upcoming assignments and deadlines.",
   },
   {
-    icon: <Layers className="h-12 w-12 text-primary" />,
-    title: "Priority Levels",
-    description: "Set low, medium, or high priority with a simple click to stay organized.",
-  },
-  {
-    icon: <PanelRight className="h-12 w-12 text-primary" />,
-    title: "Task Notes",
-    description: "Add detailed notes to any task to keep important information handy.",
-  },
-  {
-    icon: <List className="h-12 w-12 text-primary" />,
-    title: "Subtasks",
-    description: "Break down complex assignments into manageable subtasks.",
-  },
-  {
-    icon: <MoveHorizontal className="h-12 w-12 text-primary" />,
-    title: "Drag & Drop",
-    description: "Rearrange lists and headers with intuitive drag and drop functionality.",
-  },
-  {
-    icon: <CheckSquare className="h-12 w-12 text-primary" />,
-    title: "Collapsible Headers",
-    description: "Minimize headers to save space and focus on what matters.",
-  },
-  {
-    icon: <Moon className="h-12 w-12 text-primary" />,
-    title: "Dark Mode",
-    description: "Switch between light and dark mode for comfortable viewing any time of day.",
-  },
-  {
-    icon: <Settings className="h-12 w-12 text-primary" />,
-    title: "Custom Themes",
-    description: "Personalize your experience with custom color themes.",
-  },
-  {
-    icon: <PieChart className="h-12 w-12 text-primary" />,
-    title: "Productivity Stats",
-    description: "Track completion rates, tasks completed, and maintain your daily streak.",
+    icon: <Clock className="h-12 w-12 text-primary" />,
+    title: "Countdown Timers",
+    description: "Track time remaining for important deadlines and exams.",
   },
   {
     icon: <Shuffle className="h-12 w-12 text-primary" />,
     title: "Task Decision Wheel",
-    description: "Can't decide what to work on? Spin the wheel to randomly select from your incomplete tasks.",
+    description: "Can't decide what to work on? Spin the wheel to randomly select a task.",
   },
   {
-    icon: <Calendar className="h-12 w-12 text-primary" />,
-    title: "Universal Support",
-    description: "Works with any university that uses Canvas LMS.",
+    icon: <Settings className="h-12 w-12 text-primary" />,
+    title: "Custom Settings",
+    description: "Personalize the app to match your workflow preferences.",
   },
+  {
+    icon: <Palette className="h-12 w-12 text-primary" />,
+    title: "Dark Mode",
+    description: "Easy on the eyes with both light and dark themes.",
+  }
 ]
 
 export default function Features() {
   const sectionRef = useRef(null)
   const headingRef = useRef(null)
-  const cardsRef = useRef([])
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -138,7 +108,7 @@ export default function Features() {
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 mb-4">
             Features
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter gradient-text">
             Powerful Features for Students
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
@@ -152,8 +122,7 @@ export default function Features() {
             <div
               key={index}
               ref={(el) => {
-                if (cardsRef.current) cardsRef.current[index] = el;
-                return null;
+                if (el && cardsRef.current) cardsRef.current[index] = el;
               }}
               className="group relative overflow-hidden rounded-2xl border border-purple-500/20 bg-background/50 backdrop-blur-sm p-8 hover:shadow-[0_20px_80px_-15px_rgba(139,92,246,0.25)] transition-all duration-500 hover:-translate-y-1"
             >

@@ -1,13 +1,14 @@
 import type React from "react"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
-import "src/app/globals.css"
+import "./globals.css"
+import { Providers } from "@/components/providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Canvo - Canvas Integration for Students",
-  description: "The ultimate to-do list app for students with Canvas integration. Organize your academic tasks, sync with Canvas, and boost your productivity.",
+  title: "Canvo - Student To-Do List App with Canvas Integration",
+  description: "The ultimate to-do list app for students with Canvas integration. Simplify your academic life and never miss a deadline again.",
   keywords: "Canvas LMS, student productivity, task management, academic organization, to-do list, education technology",
   authors: [{ name: "Canvo Team" }],
   creator: "Canvo",
@@ -46,13 +47,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased`}>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   )

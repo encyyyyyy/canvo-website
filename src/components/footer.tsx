@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Github, Instagram } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -33,11 +32,12 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer ref={footerRef} className="bg-purple-900/20 border-t border-purple-500/20 py-16 md:py-20">
-      <div className="container px-4 md:px-6">
+    <footer ref={footerRef} className="bg-purple-900/20 border-t border-purple-500/20">
+      <div className="container px-4 md:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2 space-y-6">
-            <div className="flex items-center space-x-2">
+          {/* Logo and Description Column */}
+          <div className="md:col-span-2 space-y-8">
+            <div className="flex items-center space-x-3">
               <div className="relative w-10 h-10 overflow-hidden">
                 <img 
                   src="https://i.ibb.co/CsM7pYbR/icon.png" 
@@ -67,78 +67,69 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-4">
-              <li>
-                <button
-                  onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Features
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Demo
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("download")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Download
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  FAQ
-                </button>
-              </li>
-              <li>
-                <Link
-                  href="/support"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Support
-                </Link>
-              </li>
-            </ul>
+          {/* Navigation Links Column */}
+          <div className="space-y-8">
+            <h4 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Navigation</h4>
+            <nav className="grid grid-cols-1 gap-4">
+              <button
+                onClick={() => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+              >
+                Features
+              </button>
+              <button
+                onClick={() => document.getElementById("download")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+              >
+                Download
+              </button>
+            </nav>
           </div>
 
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold">Stay Updated</h4>
-            <p className="text-muted-foreground">Subscribe to our newsletter for updates and new features.</p>
-            <div className="space-y-3">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-background/50 backdrop-blur-sm border-purple-500/20 focus:border-purple-500/50 h-12 rounded-xl"
-              />
-              <Button className="w-full bg-primary/90 hover:bg-primary shadow-[0_4px_14px_0_rgba(139,92,246,0.4)] hover:shadow-[0_6px_20px_0_rgba(139,92,246,0.6)] transition-all duration-300 h-12 rounded-xl">
-                Subscribe
-              </Button>
-            </div>
+          {/* Support Links Column */}
+          <div className="space-y-8">
+            <h4 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Support</h4>
+            <nav className="grid grid-cols-1 gap-4">
+              <button
+                onClick={() => document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-muted-foreground hover:text-foreground transition-colors text-left"
+              >
+                FAQ
+              </button>
+              <Link
+                href="/support"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Support
+              </Link>
+              <Link
+                href="/privacy"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Privacy Policy
+              </Link>
+            </nav>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-purple-500/10 text-center text-muted-foreground">
-          <p>© {new Date().getFullYear()} Canvo. All rights reserved.</p>
+        <div className="mt-16 pt-8 border-t border-purple-500/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground">© {new Date().getFullYear()} Canvo. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/support" className="text-muted-foreground hover:text-foreground transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

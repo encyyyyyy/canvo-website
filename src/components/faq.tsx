@@ -97,7 +97,7 @@ export default function Faq() {
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 mb-4">
             FAQ
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter gradient-text">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">

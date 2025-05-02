@@ -50,7 +50,7 @@ export default function Hero() {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight">
               The To-Do List{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-purple-600">
+              <span className="gradient-text">
                 Built for Canvas
               </span>
             </h1>
@@ -61,7 +61,7 @@ export default function Hero() {
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-6 pt-4">
               <Button
                 size="lg"
-                className="group bg-purple-600 hover:bg-purple-700 text-white shadow-[0_4px_14px_0_rgba(139,92,246,0.4)] hover:shadow-[0_6px_20px_0_rgba(139,92,246,0.6)] transition-all duration-300 h-14 px-8 rounded-xl text-base"
+                className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_4px_14px_0_rgba(139,92,246,0.4)] hover:shadow-[0_6px_20px_0_rgba(139,92,246,0.6)] transition-all duration-300 h-14 px-8 rounded-xl text-base"
                 onClick={() => document.getElementById("download")?.scrollIntoView({ behavior: "smooth" })}
               >
                 <Download className="mr-2 h-5 w-5" />
@@ -73,7 +73,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="backdrop-blur-md bg-background/30 border-purple-500/30 hover:bg-background/50 h-14 px-8 rounded-xl text-base hover:border-purple-500/50 transition-all duration-300 group"
+                className="backdrop-blur-md bg-background/30 border-primary/30 hover:bg-background/50 h-14 px-8 rounded-xl text-base hover:border-primary/50 transition-all duration-300 group"
                 onClick={() => window.open('https://github.com/nicholasconoplia/student-todo-list', '_blank')}
               >
                 <Github className="mr-2 h-5 w-5" />
@@ -85,13 +85,9 @@ export default function Hero() {
             </div>
           </div>
           <div ref={imageRef} className="relative">
-            <div className="relative h-[700px] w-full perspective-1000">
+            <div className="relative h-[900px] w-full flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-3xl blur-3xl opacity-50 -z-10" />
-              <div className="absolute inset-0 flex items-center justify-center transform-style-3d rotate-y-3 hover:rotate-y-6 transition-transform duration-700">
-                <div className="relative w-[95%] h-[95%] rounded-2xl overflow-hidden shadow-[0_20px_80px_-15px_rgba(0,0,0,0.3)] border border-purple-500/30 backdrop-blur-sm bg-background/30">
-                  <HeroSlideshow />
-                </div>
-              </div>
+              <HeroSlideshow />
             </div>
           </div>
         </div>

@@ -133,7 +133,7 @@ export default function WhyChooseUs() {
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium backdrop-blur-sm border border-primary/20 mb-4">
             Comparison
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-200">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter gradient-text">
             Why Choose Canvo?
           </h2>
           <p className="text-xl text-muted-foreground max-w-[800px] mx-auto">
@@ -227,10 +227,10 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="mt-16 text-center max-w-3xl mx-auto bg-purple-900/10 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/20 shadow-[0_10px_40px_-15px_rgba(139,92,246,0.3)]">
-          <h3 className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-200 to-purple-400">
+          <h3 className="text-2xl font-bold mb-4 gradient-text">
             The Best of Both Worlds
           </h3>
-          <p className="text-lg text-white/90 mb-4">
+          <p className="text-lg text-foreground mb-4">
             Canvo is the only app that combines powerful task management with complete Canvas integration
           </p>
           <p className="text-muted-foreground">

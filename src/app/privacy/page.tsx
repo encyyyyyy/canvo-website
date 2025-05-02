@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
 
         <div className="space-y-12">
           <div className="border-b border-purple-500/20 pb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
               Canvo Privacy Policy
             </h1>
             <p className="text-muted-foreground">Last Updated: {currentDate}</p>
@@ -31,98 +31,77 @@ export default function PrivacyPolicy() {
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-2xl font-semibold mb-4 text-purple-400">Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Canvo is committed to protecting your privacy and ensuring the security of your personal information. 
-                This privacy policy explains how we collect, use, and safeguard your data when you use the Canvo app.
+                Canvo is designed with your privacy as the top priority. We believe in complete data privacy, which is why 
+                all your data is stored locally on your device. We do not collect, store, or process any of your personal 
+                information on our servers.
               </p>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <h2 className="text-2xl font-semibold mb-6 text-purple-400">Information We Collect</h2>
+              <h2 className="text-2xl font-semibold mb-6 text-purple-400">Local Data Storage</h2>
               
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-medium mb-3 text-foreground">Canvas API Key</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>We collect and securely store your Canvas LMS API key to enable integration with your Canvas account</li>
-                    <li>The API key is encrypted and stored securely on our servers</li>
-                    <li>You can revoke access to your API key at any time through Canvas</li>
+                    <li>Your Canvas LMS API key is stored securely on your local device only</li>
+                    <li>The API key is encrypted and never leaves your device</li>
+                    <li>You can remove your API key at any time through the app settings</li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-medium mb-3 text-foreground">Task Management Data</h3>
                   <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>Task titles, descriptions, due dates, and completion status</li>
-                    <li>Course assignment information synced from Canvas</li>
-                    <li>Task organization and priority settings</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="text-xl font-medium mb-3 text-foreground">Usage Data</h3>
-                  <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                    <li>Basic analytics about how you use the app's features</li>
-                    <li>App performance and diagnostic data to improve stability</li>
-                    <li>No personal information is collected for analytics purposes</li>
+                    <li>All your tasks, assignments, and settings are stored locally on your device</li>
+                    <li>Course information is synced directly between your device and Canvas</li>
+                    <li>No task or assignment data is ever sent to our servers</li>
                   </ul>
                 </div>
               </div>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <h2 className="text-2xl font-semibold mb-4 text-purple-400">How We Use Your Information</h2>
-              <p className="text-muted-foreground mb-4">We use the collected information solely to:</p>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-400">No Data Collection</h2>
+              <p className="text-muted-foreground mb-4">We want to be completely transparent:</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Connect to your Canvas account and sync your course information</li>
-                <li>Provide task management functionality</li>
-                <li>Improve app performance and user experience</li>
-                <li>Fix bugs and technical issues</li>
+                <li>We do not collect any personal information</li>
+                <li>We do not track your usage or behavior</li>
+                <li>We do not use analytics or tracking tools</li>
+                <li>We do not store any data on our servers</li>
+                <li>All communication is directly between your device and Canvas</li>
               </ul>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <h2 className="text-2xl font-semibold mb-4 text-purple-400">Data Protection</h2>
-              <p className="text-muted-foreground mb-4">We implement industry-standard security measures to protect your data:</p>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-400">Your Data Control</h2>
+              <p className="text-muted-foreground mb-4">Since all data is stored locally, you have complete control:</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Encryption of API keys and sensitive data</li>
-                <li>Secure HTTPS connections for all data transfers</li>
-                <li>Regular security audits and updates</li>
-                <li>No sharing of personal data with third parties</li>
+                <li>Access your data directly on your device</li>
+                <li>Uninstall the app to remove all stored data</li>
+                <li>Your data remains private and under your control at all times</li>
               </ul>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <h2 className="text-2xl font-semibold mb-4 text-purple-400">Your Rights</h2>
-              <p className="text-muted-foreground mb-4">You have the right to:</p>
-              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
-                <li>Access your personal data</li>
-                <li>Request deletion of your data</li>
-                <li>Revoke API access</li>
-                <li>Export your data</li>
-                <li>Contact us with privacy concerns</li>
-              </ul>
-            </div>
-
-            <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
-              <h2 className="text-2xl font-semibold mb-4 text-purple-400">Children's Privacy</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-purple-400">Third-Party Services</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Canvo complies with COPPA (Children's Online Privacy Protection Act) and FERPA 
-                (Family Educational Rights and Privacy Act). We do not knowingly collect personal 
-                information from children under 13 without parental consent.
+                The only external service Canvo interacts with is Canvas LMS, and this communication happens directly 
+                from your device using your provided API key. We do not act as an intermediary for any data transfer.
               </p>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-2xl font-semibold mb-4 text-purple-400">Changes to Privacy Policy</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We may update this privacy policy periodically. Users will be notified of any 
-                material changes.
+                We may update this privacy policy periodically to reflect changes in our practices or for other operational, 
+                legal, or regulatory reasons. Any changes will maintain our commitment to keeping your data local and private.
               </p>
             </div>
 
             <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/20">
               <h2 className="text-2xl font-semibold mb-4 text-purple-400">Contact Us</h2>
-              <p className="text-muted-foreground mb-4">For privacy-related questions or concerns:</p>
+              <p className="text-muted-foreground mb-4">For questions about our privacy practices:</p>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <span className="text-muted-foreground">Email:</span>
