@@ -62,69 +62,77 @@ export default function Download() {
           </p>
         </div>
 
-        <div ref={buttonsRef} className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
-          <div ref={macRef} className="w-full md:w-1/3">
-            <button onClick={() => setIsMacModalOpen(true)} className="block w-full">
+        <div ref={buttonsRef} className="flex flex-col items-center justify-center gap-8 max-w-5xl mx-auto">
+          {/* iPhone Download - Main Focus */}
+          <div ref={iphoneRef} className="w-full md:w-2/3 mb-8">
+            <a href="https://apps.apple.com/au/app/canvo/id6745335226" target="_blank" rel="noopener noreferrer" className="block w-full">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-600/20 to-purple-500/20 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                 <Button
                   variant="outline"
-                  className="relative w-full h-40 rounded-xl border-2 border-purple-500/20 bg-gradient-to-b from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white transition-all duration-300 group-hover:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.5)]"
+                  className="relative w-full h-52 rounded-xl border-2 border-purple-500/20 bg-gradient-to-b from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white transition-all duration-300 group-hover:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.5)]"
                 >
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="p-3 rounded-full bg-white/10">
-                      <Apple className="h-12 w-12 text-white" />
+                  <div className="flex flex-col items-center justify-center gap-6">
+                    <div className="p-4 rounded-full bg-white/10">
+                      <Phone className="h-16 w-16 text-white" />
                     </div>
                     <div className="text-center">
-                      <div className="text-sm text-white/80">Download for</div>
-                      <div className="text-2xl font-bold mt-1 text-white">macOS</div>
+                      <div className="text-lg text-white/80">Download for</div>
+                      <div className="text-3xl font-bold mt-2 text-white">iPhone & Mac</div>
+                      <div className="text-sm text-white/80 mt-2">Available on the App Store</div>
+                      <div className="text-xs text-white/70 mt-1">Works on iPhone and M1/M2/M3 Macs</div>
                     </div>
                   </div>
                 </Button>
               </div>
-            </button>
+            </a>
           </div>
 
-          <div ref={windowsRef} className="w-full md:w-1/3">
-            <button onClick={() => setIsWindowsModalOpen(true)} className="block w-full">
-              <div className="relative group">
-                <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-600/20 to-purple-500/20 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-                <Button
-                  variant="outline"
-                  className="relative w-full h-40 rounded-xl border-2 border-purple-500/20 bg-gradient-to-b from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white transition-all duration-300 group-hover:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.5)]"
-                >
-                  <div className="flex flex-col items-center justify-center gap-4">
-                    <div className="p-3 rounded-full bg-white/10">
-                      <Monitor className="h-12 w-12 text-white" />
+          {/* Desktop Downloads - Secondary */}
+          <div className="w-full flex flex-col md:flex-row items-center justify-center gap-4">
+            <div ref={macRef} className="w-full md:w-1/3">
+              <button onClick={() => setIsMacModalOpen(true)} className="block w-full">
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-600/10 to-purple-500/10 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+                  <Button
+                    variant="outline"
+                    className="relative w-full h-32 rounded-xl border-2 border-purple-500/10 bg-gradient-to-b from-purple-600/90 to-purple-500/90 hover:from-purple-700 hover:to-purple-600 text-white transition-all duration-300 group-hover:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.3)]"
+                  >
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="p-2 rounded-full bg-white/10">
+                        <Apple className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm text-white/80">Download for</div>
+                        <div className="text-xl font-bold mt-1 text-white">macOS</div>
+                        <div className="text-xs text-white/70">(Legacy Version)</div>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-sm text-white/80">Download for</div>
-                      <div className="text-2xl font-bold mt-1 text-white">Windows</div>
-                    </div>
-                  </div>
-                </Button>
-              </div>
-            </button>
-          </div>
-
-          <div ref={iphoneRef} className="w-full md:w-1/3">
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-b from-gray-400/10 to-gray-600/10 rounded-xl blur opacity-75 transition duration-1000" />
-              <Button
-                variant="outline"
-                className="relative w-full h-40 rounded-xl border-2 border-gray-400/20 bg-gradient-to-b from-gray-400 to-gray-600 text-white transition-all duration-300 cursor-not-allowed opacity-60"
-              >
-                <div className="flex flex-col items-center justify-center gap-4">
-                  <div className="p-3 rounded-full bg-white/10">
-                    <Phone className="h-12 w-12 text-white" />
-                  </div>
-                  <div className="text-center">
-                    <div className="text-sm text-white/80">Download for</div>
-                    <div className="text-2xl font-bold mt-1 text-white">iPhone</div>
-                    <div className="text-sm text-white/80 mt-2">Coming Soon</div>
-                  </div>
+                  </Button>
                 </div>
-              </Button>
+              </button>
+            </div>
+
+            <div ref={windowsRef} className="w-full md:w-1/3">
+              <button onClick={() => setIsWindowsModalOpen(true)} className="block w-full">
+                <div className="relative group">
+                  <div className="absolute -inset-0.5 bg-gradient-to-b from-purple-600/10 to-purple-500/10 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+                  <Button
+                    variant="outline"
+                    className="relative w-full h-32 rounded-xl border-2 border-purple-500/10 bg-gradient-to-b from-purple-600/90 to-purple-500/90 hover:from-purple-700 hover:to-purple-600 text-white transition-all duration-300 group-hover:shadow-[0_10px_40px_-15px_rgba(139,92,246,0.3)]"
+                  >
+                    <div className="flex flex-col items-center justify-center gap-3">
+                      <div className="p-2 rounded-full bg-white/10">
+                        <Monitor className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="text-center">
+                        <div className="text-sm text-white/80">Download for</div>
+                        <div className="text-xl font-bold mt-1 text-white">Windows</div>
+                      </div>
+                    </div>
+                  </Button>
+                </div>
+              </button>
             </div>
           </div>
         </div>
@@ -159,10 +167,10 @@ export default function Download() {
                   <div className="flex flex-col items-center text-center">
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-green-500">✓</span>
-                      <p className="text-green-500/90 font-medium">iPhone App Compatibility</p>
+                      <p className="text-green-500/90 font-medium">App Store Version Compatibility</p>
                     </div>
                     <p className="text-green-500/80 text-sm">
-                      Works with all Canvas institutions
+                      Works with all Canvas institutions and runs natively on iPhone and Apple Silicon Macs
                     </p>
                   </div>
                 </div>
